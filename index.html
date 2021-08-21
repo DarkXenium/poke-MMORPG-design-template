@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pok&eacute;mon Eclipse</title>
+  <script>
+var song = new Audio();
+song.src = "bgmusic.mp3";
+const playSong =()=>{
+     song.play();
+
+}
+const pauseSong=()=>{
+    song.pause();
+}
+
+</script>
+    
+</head>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url("images/bg.jpg");
+    background-repeat: repeat-y;
+    background-size: 1500px 1000px;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Anton', sans-serif;
+}
+
+.left{
+    display: inline-block;
+    position: absolute;
+    left: 42px;
+    top: 10px;
+    
+}
+.left img{
+    width: 320px;
+    height: 182px;
+}
+
+.mid{
+    background-color:rgb(20, 20, 20);
+    border-radius: 8px;
+    border: 2px solid rgb(73, 73, 73);
+    color: aliceblue;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    display: block;
+    text-align: center;
+    width: 35%;
+    margin: -29px auto;
+    font-family: fantasy;
+}
+.right{
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+}
+
+.navbar li{
+    display: inline-block;
+}
+.navbar li a{
+    color: #fdfafa;
+    text-decoration: none;
+    padding: 8px 6px;
+    margin: 4px;
+}
+.navbar li a:hover, .navbar li a.active{
+    color: rgb(71, 73, 80);
+    text-decoration: underline;
+    padding: 8px 6px;
+    margin: 4px;
+    text-emphasis: bold;
+    background-color: lemonchiffon;
+    border-radius: 8px;
+}
+.btn{
+    border: 3px solid gold;
+    margin: 2px;
+    padding: 11px 11px;
+    font-size: 15px;
+    border-radius: px;
+    box-shadow: 1px 2px 4px black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn a{
+    color: rgb(0, 0, 49);
+    font-family: 'Ubuntu', sans-serif;
+}
+.btn:hover{
+    color: goldenrod;
+    background-color: rgb(255, 208, 189);
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}
+.container{
+    display: inline-block;
+    border-radius: 31px;
+    width: 25%;
+    background-color: rgb(251, 209, 181);
+    border: 4px solid rgb(73, 73, 73);
+    margin: 31px 40px;
+    padding: 10px 10px;
+}
+h1{
+    color: goldenrod;
+    text-align: center;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+.form-group input{
+    text-align: center;
+    display: block;
+    width: 80%;
+    margin: 6px auto;
+    border: 2px solid rgb(0, 0, 54);
+    padding: 7px 8px;
+    border-radius: 20px;
+}
+#finish{
+    color: blanchedalmond;
+     text-align: center;
+    display: block;
+    width: 80%;
+    margin: 6px auto;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 7px 8px;
+    background-color: orangered;
+    text-emphasis: bold;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-emphasis: bold;
+}
+#finish:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(247, 53, 53);
+    font-size: 13px;
+    
+}
+
+.container:hover{
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 20px whitesmoke;
+}
+.side-panel{
+    display: block;
+    border-radius: 31px;
+    width: 34%;
+    padding: 10px 10px;
+    position: absolute;
+    top: 170px;
+    right: 100px;
+}
+
+.box-1{
+    border: 4px solid red;
+    background-color:rgb(251, 108, 51);
+    margin: 3px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 348px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s  8 forwards ;
+}
+.box-2{
+    border: 4px solid blue;
+    background-color: rgb(99, 199, 233);
+    margin: 2px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s  8 forwards ;
+}
+.box-3{
+    background-color: rgb(0, 156, 0);
+    border: 4px solid black;
+    margin: 2px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 348px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s 8 forwards ;
+}
+.box-4{
+    background-color: rgb(236, 31, 255); 
+    border: 4px solid rgb(94, 0, 156);
+    margin: 2px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 348px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s 8 forwards ;
+}
+.box-5{
+    background-color: silver;
+    border: 4px solid grey;
+    margin: 2px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 348px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s 8 forwards ;
+}
+.box-6{
+    background-color: yellow;
+    border: 4px solid rgb(255, 238, 0);
+    margin: 2px 2px;
+    padding: 3px 3px;
+    height: 32px;
+    width: 348px;
+    border-radius: 10px;
+    text-align: center;
+    animation: movebar 2s ease-in-out 0s 8 forwards ;
+}
+
+@keyframes movebar{
+    from{
+        width: 400px;
+    }
+    to{
+        width: 500px;
+    }
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#StarterEvo{
+    display: flex;
+    margin: 5px 5px;
+    padding: 4px 4px;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.box{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    border: 3px solid rgb(255, 55, 55);
+}
+.pokebox{
+    background-color: orange;
+}
+
+#starterlist{
+    text-align: center;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+#Starter-selection select{
+    padding: 15px 15px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    border: 3px solid brown;
+    font-size: 14px;
+    background-color: rgb(245, 205, 179);
+}
+#Starter-selection select:hover{
+    transform: scale(1.1);
+}
+
+#Starter-selection::before{
+    content:"";
+    position: absolute;
+    background: url("bg2.jpg");
+    height: 30%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+p{
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+footer{
+    font-size: 13px;
+    background: black;
+    padding: 18px 10px;
+    color: white;
+    position: sticky;
+    bottom: 0%;
+    opacity: .9;
+    text-align: center;
+}
+
+#fmsgs{
+    display: none;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    border: 2px solid red;
+    color: red;
+    background-color: rgb(247, 156, 156);
+    margin: 10px 20px;
+    padding: 10px 25px;
+}
+span a img{
+    display: inline;
+    width: 55px;
+    height: auto;
+}
+#soundinfo{
+    margin: 5px 5px;
+    padding: 10px 10px;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
+<body>
+  <div id="soundinfo"></div><marquee>NOTE : Click the Vibing pikachu once to enable sound or double click to mute.</marquee></div>
+  <span>
+    <a onclick="playSong()" ondblclick="pauseSong()">
+      <img src="images/soundicon1.gif"></img>
+    </a>
+  </span>
+  <header class="header">
+    <div class="left">
+      <img src="images/logo4.png" alt="logo">
+    </div>
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="login.html" class="active">Home</a></li>
+        <li><a href="#3dsprite">Pokemon List</a></li>
+        <li><a href="#section">Pokemon Type Effectivness</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <button class="btn"><a href="https://www.youtube.com/channel/UCFctpiB_Hnlk3ejWfHqSm6Q" target="_blank">Pokemon channel!</button>
+      <button class="btn"><a href="https://github.com/DarkXenium" target="_blank">Github Profile!</a></button>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Let's Begin!!</h1>
+    <form name="login" class="myForm" method="POST" data-netlify="true">
+      <!-- <div class="form-group">
+        <input type="text" placeholder="Player Name" id="name">
+      </div> -->
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Player Username*">
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password*">
+      </div>
+      <div class="form-group">
+        <div>Do you want to play as a</div>
+        <span>Boy (optional) :<input type="radio" name="gender"></span>
+        <span>Girl (optional) :<input type="radio" name="gender"></span>
+      </div>
+      <div class="form-group">
+        <input type="number" placeholder="Age(optional)" id="age">
+      </div>
+      <!-- <div class="form-group">
+        <label for="asking">Is this your First time with Pokemon:</label>
+        <input type="checkbox" name="asking">
+      </div>
+      <div class="form-group">
+        Do you want to Play as a Nuclocke:<input type="checkbox" name="help-p">
+      </div> -->
+
+      <div class="form-group">
+        <button type="submit" id="finish">Login</button>
+      </div>
+    </form>
+  </div>
+  <ul id="fmsgs"></ul>
+  </div>
+  <div class="side-panel">
+    <div class="box-1">
+      Fire-Pokemon:-Charizard,Arcanine,Infernape
+    </div>
+    <div class="box-2">
+      Water-Pokemon:-Blastoise,Feraligator
+    </div>
+    <div class="box-4">
+      Poison-Pokemon:-Golbat,Drapion
+    </div>
+    <div class="box-5">
+      Steel-Pokemon:-Lucario,Aggron
+    </div>
+    <div class="box-6">
+      Psychic/Electric-Pokemon:-Alakazam,Pikachu
+    </div>
+    <div class="box-3">
+      Grass-Pokemon:-Sceptile,Venasaur,Ludicolo
+    </div>
+  </div>
+
+  <h1 id="starterlist">List of Pokemon present in the Game</h1>
+  <div class="box" id="3dsprite">
+    <div class="pokebox"><img src="images/venusaur.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/venusaur-f.gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/blastoise.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/blastoise (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/pikachu.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/pikachu (1).gif" alt="none">
+    </div>
+    <div class="pokebox"><img src="images/arcanine.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/arcanine (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/alakazam-mega.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/alakazam-mega (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/rapidash.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/rapidash (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/sceptile.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/sceptile (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/feraligatr.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/feraligatr (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/ludicolo.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/ludicolo-f.gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/aggron.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/aggron (1).gif" alt="none">
+    </div>
+    <div class="pokebox"><img src="images/lucario-mega.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/lucario-mega (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/infernape.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/infernape (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/garchomp.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/garchomp (1).gif" alt="none">
+    </div>
+    <div class="pokebox"><img src="images/charizard.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/charizard (1).gif"
+        alt="none"></div>
+    <div class="pokebox"><img src="images/drapion.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/drapion (1).gif" alt="none">
+    </div>
+    <div class="pokebox"><img src="images/golbat.gif" alt="none"></div>
+    <div class="pokebox"><img src="images/golbat-f.gif"
+        alt="none"></div>
+  </div>
+  <!-- <h1 id="starterlist">Its finally Time Choose your starter!</h1>
+      <p>Select 1 Pok&eacute;mon from each Gen and we Will Pick You a Random Pokemon to spice up things!</p>
+      <section id="Starter-selection">
+        <div class="strt-select">
+        <label for="Fire Starter">Fire Starters</label>
+        <select name="mystarter" id="Fire Starter">
+          <option value="gen1">Charmander</option>
+          <option value="gen1">Cyndaquil</option>
+          <option value="gen1">Torchic</option>
+        </select>
+        <label for="Water Starter">Water Starters</label>
+        <select name="mystarter" id="Water Starter">
+          <option value="gen1">Squirtle</option>
+          <option value="gen1">Totodile</option>
+          <option value="gen1">Mudkip</option>
+        </select>
+        <label for="Grass Starter">Grass Starters</label>
+        <select name="mystarter" id="Grass Starter">
+          <option value="gen1">Bulbasaur</option>
+          <option value="gen1">Chikorita</option>
+          <option value="gen1">Treecho</option>
+        </select>
+      </div>
+    </section> -->
+  <section id="section">
+    <iframe src="https://filipekiss.github.io/pokemon-type-chart//" height="800" width="90%" frameborder="0">Sorry could
+      not load</iframe>
+  </section>
+  <footer>
+    <div class="center">
+      Copyright &copy; www.PokemonEclipse.com All rights reserved. This is a fan-made website and all rights goes to the
+      Pokemon company.
+    </div>
+  </footer>
+
+</body>
+
+
+</html>
